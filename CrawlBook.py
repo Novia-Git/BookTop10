@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
+
 res = requests.get("http://www.eslite.com/sale_top.aspx?cate=156")
 soup = BeautifulSoup(res.text,'html.parser')
 link = soup.find_all('a', id=re.compile('^ctl00_ContentPlaceHolder1_top50_top50List'))
